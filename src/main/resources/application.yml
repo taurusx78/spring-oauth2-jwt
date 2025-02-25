@@ -1,0 +1,49 @@
+server:
+  port: 8081
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 469200765453-8q83g4p5c4u2qh1n3van70hpe1s0h9qd.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - profile
+              - email
+              - openid
+          kakao:
+            client-id: b8173d4703a4a198c621845fae90ae8d
+            client-secret: GeHPBP6nhqbL0UYmUaZ2CyTaRqm8MP8n
+            authorization-grant-type: authorization_code
+            client-name: 환우한끼
+            redirect-uri: http://localhost:8081/login/oauth2/code/kakao
+            scope:
+              - profile_nickname
+              - profile_image
+        provider:
+          kakao:
+            issuer-uri: https://kauth.kakao.com
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v1/oidc/userinfo
+            jwk-set-uri: https://kauth.kakao.com/.well-known/jwks.json
+            user-name-attribute: sub # 유저 정보 조회 시 반환되는 최상위 필드명으로 해야 한다.
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/patients_meal?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: hlbg240310
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+
+  mvc:
+    static-path-pattern: /static/**
+
+  jwt:
+    secret: JB0eYS0rNBkIHjvHtVAEYQ==
