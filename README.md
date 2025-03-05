@@ -50,7 +50,7 @@ CREATE TABLE user (
 	created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT '생성일시',
 	updated_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '수정일시',
 	last_logged_at TIMESTAMP                           NULL COMMENT '마지막 로그인 일시',
-  refresh_token  VARCHAR(255)                        NULL COMMENT 'Refresh Token 값',
+        refresh_token  VARCHAR(255)                        NULL COMMENT 'Refresh Token 값',
 	deleted_at     TIMESTAMP                           NULL COMMENT '삭제일시'
 );
 ```
