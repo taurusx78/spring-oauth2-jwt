@@ -26,7 +26,7 @@
 `docker pull mysql:8.0`
     
 3. MySQL Docker 컨테이너 생성 및 실행<br>
-`docker run --name hlbg-mysql -e MYSQL_ROOT_PASSWORD=hlbg240310 -d -p 3306:3306 mysql:8.0`
+`docker run --name hlbg-mysql -e MYSQL_ROOT_PASSWORD=패스워드 -d -p 3306:3306 mysql:8.0`
     
 4. MySQL 접속<br>
 `docker exce -it hlbg-mysql mysql -u root -p`
